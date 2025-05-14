@@ -1,11 +1,14 @@
 <script setup>
+import { inject } from "vue";
 import DrawerHead from "./DrawerHead.vue"
 import CartListItem from "./CartListItem.vue"
+
+const { closeDriver } = inject('cart')
 </script>
 
 <template>
-    <div class="fixed inset-0 h-full w-full bg-black opacity-70 z-10"></div>
-    <div class="bg-white w-[70%] h-full fixed right-0 top-0 z-20 p-8">
+    <div @click="closeDriver" class="fixed inset-0 h-full w-full bg-black opacity-70 z-10"></div>
+    <div class="bg-white w-[70%] md:w-[50%] lg:w-[40%] xl:w-[30%] h-full fixed right-0 top-0 z-20 p-8 overflow-x-auto">
         <DrawerHead />
 
         <CartListItem />
